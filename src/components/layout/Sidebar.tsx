@@ -59,28 +59,17 @@ export const Sidebar: React.FC<SidebarProps> = ({
   };
 
   return (
-    <aside className="w-64 bg-[#064E3B] text-white flex flex-col shrink-0 min-h-screen border-r border-emerald-900/40 select-none">
+    <aside className="w-64 bg-white flex flex-col shrink-0 min-h-screen border-r border-gray-100 select-none">
       {/* Brand Header */}
-      <div className="p-5 border-b border-emerald-800/60 flex items-center gap-3">
-        <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#4EC69A] to-emerald-400 flex items-center justify-center text-[#064E3B] font-extrabold shadow-sm shrink-0">
-          <ShieldCheck className="w-5 h-5 text-[#064E3B]" />
-        </div>
-        <div className="overflow-hidden">
-          <h2 className="text-sm font-bold tracking-tight text-white truncate">
-            Succession Planning
-          </h2>
-          <p className="text-[11px] text-emerald-200/70 font-medium truncate">
-            Meridian Global Tech
-          </p>
-        </div>
+      <div className="pt-8 pb-6 px-6 flex items-center gap-2">
+        <ShieldCheck className="w-6 h-6 text-[#147B5A]" />
+        <h2 className="text-xl font-bold tracking-tight text-[#147B5A] truncate">
+          Succession
+        </h2>
       </div>
 
-      {/* Main Navigation Items (10 modules) */}
-      <div className="flex-1 py-4 px-3 overflow-y-auto space-y-1">
-        <div className="px-3 pb-2 text-[10px] font-bold uppercase tracking-wider text-emerald-300/60">
-          Executive Modules
-        </div>
-
+      {/* Main Navigation Items */}
+      <div className="flex-1 py-2 overflow-y-auto space-y-1">
         {mainNavItems.map((item) => {
           const active = isNavActive(item.id);
           const Icon = item.icon;
@@ -90,16 +79,16 @@ export const Sidebar: React.FC<SidebarProps> = ({
               key={item.id}
               type="button"
               onClick={() => onNavigate(item.id)}
-              className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-xs font-semibold transition-all duration-150 group cursor-pointer ${
+              className={`w-[90%] flex items-center justify-between pl-6 pr-4 py-3 rounded-r-full text-sm font-medium transition-all duration-150 group cursor-pointer ${
                 active
-                  ? 'bg-[#4EC69A] text-[#064E3B] font-bold shadow-xs'
-                  : 'text-emerald-100 hover:text-white hover:bg-emerald-800/40'
+                  ? 'bg-[#147B5A] text-white shadow-sm'
+                  : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
               }`}
             >
-              <div className="flex items-center gap-2.5 truncate">
+              <div className="flex items-center gap-3 truncate">
                 <Icon
-                  className={`w-4 h-4 shrink-0 transition-transform ${
-                    active ? 'text-[#064E3B]' : 'text-emerald-300 group-hover:scale-105'
+                  className={`w-5 h-5 shrink-0 transition-transform ${
+                    active ? 'text-white' : 'text-gray-400 group-hover:text-gray-600'
                   }`}
                 />
                 <span className="truncate">{item.label}</span>
@@ -107,12 +96,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
               {item.badge !== undefined && item.badge > 0 && (
                 <span
-                  className={`px-1.5 py-0.5 rounded text-[10px] font-mono font-bold shrink-0 ${
+                  className={`px-2 py-0.5 rounded-full text-[10px] font-bold shrink-0 ${
                     active
-                      ? 'bg-[#064E3B] text-white'
+                      ? 'bg-white text-[#147B5A]'
                       : item.badgeAlert
-                      ? 'bg-[#DC2626] text-white'
-                      : 'bg-emerald-800 text-emerald-200'
+                      ? 'bg-red-100 text-red-600'
+                      : 'bg-gray-100 text-gray-500'
                   }`}
                 >
                   {item.badge}
