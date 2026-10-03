@@ -1,0 +1,6 @@
+{
+  "name": "Succession Planning",
+  "description": "Enterprise talent succession planning, critical position depth, 9-box assessment, and leadership continuity platform for HR leaders and executives.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

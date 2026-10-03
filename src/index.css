@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Space Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --color-emerald-primary: #047857;
+  --color-emerald-sidebar: #064E3B;
+  --color-mint-accent: #4EC69A;
+  --color-dark-text: #0B1F18;
+  --color-warm-bg: #F7F5EF;
+  --color-risk-critical: #DC2626;
+  --color-risk-high: #EA580C;
+  --color-risk-medium: #D97706;
+  --color-risk-low: #16A34A;
+  --color-risk-unassessed: #9CA3AF;
+}
+
+:root {
+  font-family: var(--font-sans);
+  color: #0B1F18;
+  background-color: #F7F5EF;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F0EDE4;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Accessible focus ring utility */
+.focus-ring {
+  outline: none;
+}
+.focus-ring:focus-visible {
+  outline: 2px solid #047857;
+  outline-offset: 2px;
+}
